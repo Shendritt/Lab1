@@ -10,7 +10,7 @@ const pharmacist = () => {
         height: '100vh'
       }}
     >
-      <h1>Crud form for Pharmacist </h1>
+      <h1>Crud form for Pharmacist</h1>
     </div>
   );
 };
