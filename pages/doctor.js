@@ -1,13 +1,9 @@
 
-
 //crud
 import React, { Component } from 'react';
 
 
-
-
-
-class App extends Component {
+class Doctor extends Component {
 
   constructor(props){   
     super(props);
@@ -98,7 +94,7 @@ class App extends Component {
           <input type="text" ref="phone" placeholder="Enter phone number" className="formField" />
           <input type="text" ref="address" placeholder="Enter address" className="formField" />
           <input type="text" ref="email" placeholder="Enter email" className="formField" />
-          <button onClick={(e)=>this.fSubmit(e)} className="myButton">submit </button>
+          <button onClick={(e)=>this.fSubmit(e)} className="myButton">Submit </button>
         </form>
         <pre>
           {datas.map((data, i) =>
@@ -114,7 +110,4 @@ class App extends Component {
   }
 }
 
-export default App;
-
-
-//
+export default Doctor;
