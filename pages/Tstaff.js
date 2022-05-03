@@ -27,14 +27,16 @@ class Tstaff extends Component {
 
     let datas = this.state.datas;
     let name = this.refs.name.value;
+    let wp = this.refs.wp.value;
     let surname = this.refs.surname.value;
     let phone = this.refs.phone.value;
     let address = this.refs.address.value;
     let email = this.refs.email.value;
 
+
     if(this.state.act === 0){   //new
       let data = {
-        name, address, surname, phone, email
+        name, address, surname, phone, email, wp
       }
       datas.push(data);
     
@@ -45,6 +47,7 @@ class Tstaff extends Component {
       datas[index].phone = phone;
       datas[index].address = address;
       datas[index].email = email;
+      datas[index].wp = wp;
      
     }    
 
@@ -75,6 +78,7 @@ class Tstaff extends Component {
     this.refs.phone.value = data.phone;
     this.refs.address.value = data.address;
     this.refs.email.value = data.email;
+    this.refs.wp.value = data.wp;
    
 
     this.setState({
@@ -93,6 +97,7 @@ class Tstaff extends Component {
         <form ref="myForm" className="myForm">
           <input type="text" ref="name" placeholder="Enter name" className="formField" />
           <input type="text" ref="surname" placeholder="Enter surname" className="formField" />
+          <input type="text" ref="wp" placeholder="Enter working position" className="formField" />
           <input type="text" ref="phone" placeholder="Enter phone number" className="formField" />
           <input type="text" ref="address" placeholder="Enter address" className="formField" />
           <input type="text" ref="email" placeholder="Enter email" className="formField" />
@@ -101,7 +106,7 @@ class Tstaff extends Component {
         <pre>
           {datas.map((data, i) =>
             <li key={i} className="myList">
-              {i+1}. {data.name}, {data.surname}, {data.phone}, {data.address}, {data.email}
+              {i+1}. {data.name}, {data.surname}, {data.wp}, {data.phone}, {data.address}, {data.email}
               <button onClick={()=>this.fRemove(i)} className="myListButton">remove </button>
               <button onClick={()=>this.fEdit(i)} className="myListButton">edit </button>
             </li>
